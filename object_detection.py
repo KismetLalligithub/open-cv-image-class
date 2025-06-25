@@ -18,9 +18,9 @@ def detect_objects_with_boxes(video_source=0, model_path="yolov8n.pt"):
             label = model.names[int(box.cls[0])]
             conf = float(box.conf[0])
 
-            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 225, 0), 2)
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
             cv2.putText(frame, f"{label} {conf:.2f}", (x1, y1 - 10), 
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.0, (0, 225, 0), 2)
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 225, 0), 2)
 
         cv2.imshow("Detected Objects", frame)
 
